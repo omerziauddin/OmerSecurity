@@ -23,6 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("omer").password(encoder.encode("password")).roles("ADMIN");
 		auth.inMemoryAuthentication().withUser("ziauddin").password(encoder.encode("password")).roles("USER");
+		auth.inMemoryAuthentication().withUser("ansari").password(encoder.encode("password")).roles("USER","ADMIN");
 
 	}
 	// method in which we want to implement security
