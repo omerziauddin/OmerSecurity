@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 
-    public static String Password="password";
+   
 	// if u r not configuring any usernam password then u can use token generated in
 	// console as password
 	// and username as user
