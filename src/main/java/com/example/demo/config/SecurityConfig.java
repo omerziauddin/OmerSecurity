@@ -27,10 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	// method in which we want to implement security
 	// only url based security ie every url will be authenticated ie for all api
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests().anyRequest().fullyAuthenticated().and().httpBasic();
+		//authorize any request which is coming to my application with basic authentication
 	}
 	
 	// this depricated class used bs now password method will not expect
