@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/rest/auth")
 public class AuthController {
-
+//requires authentication 
 	@GetMapping("/getMsg")
 	public String greeting() {
 		return "String security example";

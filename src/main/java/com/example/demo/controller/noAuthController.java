@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/noAuth")
 public class noAuthController {
 
-	
+	//dont rquires authentication now
 	@GetMapping("/sayHi")
 	public String sayHi()
 	{
