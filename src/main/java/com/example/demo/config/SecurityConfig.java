@@ -31,7 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests().antMatchers("/rest/**").fullyAuthenticated().and().httpBasic();
-	}// for urls having /rest/auth only those urls will be authenticated else not
+	}
+	
+	// for urls having start with /rest only those urls will be authenticated else not
 	//http://localhost:8080/noAuth/sayHi     in postman use no auth while executing this
 	//http://localhost:8080/rest/auth/getMsg    in postman use basic auth while executing this and enter usernae paswrd
 
