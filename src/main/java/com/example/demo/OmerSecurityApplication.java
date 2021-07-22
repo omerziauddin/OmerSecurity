@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 
-@EnableWebSecurity
+/*@EnableWebSecurity*/
 @SpringBootApplication
 public class OmerSecurityApplication {
 
