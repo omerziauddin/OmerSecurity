@@ -17,22 +17,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public PasswordEncoder encoder;
 
-	// implement security for specific controller not for other controllers by using
-	// url based security
+	//role based security
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication().withUser("omer").password(encoder.encode("password")).roles("ADMIN");
+		auth.inMemoryAuthentication().withUser("ziauddin").password(encoder.encode("password")).roles("USER");
 
 	}
 	// method in which we want to implement security
-	// not every url will be authenticated only specific urls will be authentiated
-
+	// not every role will be granted access only specific role will be granted access
+    // security based on role 
+	// only ADMIN will be granted access after authentication any other role will not be granted access even after authentication
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/rest/**").fullyAuthenticated().and().httpBasic();
+		http.authorizeRequests().antMatchers("/rest/**").hasAnyRole("ADMIN").anyRequest().fullyAuthenticated().and().httpBasic();
+		//url rest can always be authorized only by admin roler
 	}
-	
 	// for urls having start with /rest only those urls will be authenticated else not
 	//http://localhost:8080/noAuth/sayHi     in postman use no auth while executing this
 	//http://localhost:8080/rest/auth/getMsg    in postman use basic auth while executing this and enter usernae paswrd
