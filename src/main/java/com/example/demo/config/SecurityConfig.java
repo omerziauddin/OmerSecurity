@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	// this depricated class used bs now password method will not expect
-	// excpect password in encrypted format see matches method in this class
+	// dont excpect password in encrypted format see matches method in this class
 	
 	  @SuppressWarnings("deprecation")
 	  
